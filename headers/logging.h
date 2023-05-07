@@ -14,7 +14,8 @@ public:
     ~logging();
 
     static void info(std::string msg);
-    static void info(char *msg);
+    static void warning(std::string msg);
+    static void error(std::string msg);
 };
 
 logging::logging(/* args */)
@@ -30,9 +31,13 @@ static void info(std::string msg)
     std::cout << "[INFO]:" << msg << std::endl;
 }
 
-static void info(char *msg)
+static void warning(std::string msg)
 {
-    std::cout << "[INFO]:" << msg << std::endl;
+    std::cout << "[WARNING]:" << msg << std::endl;
+}
+static void error(std::string msg)
+{
+    std::cerr << "[ERROR]:" << msg << std::endl;
 }
 
 #endif
