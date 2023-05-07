@@ -1,25 +1,6 @@
-class vector
-{
-private:
-    double *data;
-    int _size;
+#include "vector.h"
 
-public:
-    vector(int size);
-    vector(double *data, int size);
-    ~vector();
-
-    int size();
-    double operator[](int index);
-    vector operator+(vector &other);
-    vector operator-(vector &other);
-    vector operator*(vector &other);
-
-    vector operator+(double value);
-    vector operator-(double value);
-    vector operator*(double value);
-    vector operator/(double value);
-};
+using namespace matlib;
 
 vector::vector(int size = 3)
 {
@@ -56,3 +37,12 @@ double vector::operator[](int index)
     }
     return this->data[index];
 }
+
+vector vector::operator+(vector &other) {}
+vector vector::operator-(vector &other) {}
+vector vector::operator*(vector &other) {}
+
+vector vector::operator+(double value) {}
+vector vector::operator-(double value) {}
+vector vector::operator*(double value) {}
+vector vector::operator/(double value) {}
